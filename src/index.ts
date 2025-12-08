@@ -1,4 +1,4 @@
-import { WebSocketProvider, Contract, BigNumberish } from "ethers";
+import { WebSocketProvider, Contract, formatEther } from "ethers";
 import dotenv from "dotenv";
 
 import { abi as erc20Abi } from '../artifacts/contracts/erc20.sol/CustomToken.json'
@@ -21,11 +21,13 @@ async function listenErc20() {
     provider
   );
   
-  contract.on("Transfer", (...args) => {
-    console.log(`Tx Hash: ${JSON.stringify(args)}`);
+  contract.on('Transfer', async (from, to, value, event) => {
+    console.log(`🔥 ERC20 transfer: [${event.log.transactionHash}]
+      ${from} -> ${to} 
+      ${formatEther(value)}ETH \n`);
   })
   
-  console.log('Listening to ERC20 contract events...');
+  console.log(`Listening to ERC20 contract (${process.env.ERC_20_CONTRACT_ADDRESS}) events...`);
 }
 
 async function main() { 
