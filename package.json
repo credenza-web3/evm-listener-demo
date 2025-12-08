@@ -1,0 +1,26 @@
+{
+  "name": "one-football-listener-demo",
+  "version": "1.0.0",
+  "description": "A TypeScript project that listens to wallet changes for user notifications",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "postinstall": "npx hardhat compile"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.7.1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@types/node": "^20.5.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}
