@@ -1,3 +1,9 @@
+# OneFootball Wallet Listener Demo
+
+This TypeScript demonstration listens for Credenza-managed wallet and contract changes and turns them into user notification events. It includes example contracts, generated bindings, listener code, and tests.
+
+Use it as an integration reference for event-driven EVM applications.
+
 ## Setup
 
 1. Install dependencies:
